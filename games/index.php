@@ -15,7 +15,16 @@ require_once(TEMPLATES_PATH . "/header.php");
 <div class="row-fluid col-sm-4">
 	<form class="form" id="chooseGame" method="post" action="play">
 		<select class="form-control selectpicker" name="gameId">
-			<option value="1">Ruby Drop</option>
+			<?php 
+
+			$db = new SQLite3(DATA_PATH . '/games.db');
+			$results = $db -> query("SELECT * FROM games");
+
+			while ($row = $results -> fetchArray()) {
+				printf('<option value = "' . $row['id'] . '">' . $row['name'] . '</option>' . "\n");
+			}
+
+			?>
 		</select>
 
 		<br>	

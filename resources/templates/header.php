@@ -1,7 +1,14 @@
+<?php 
+
+session_start();
+session_regenerate_id(true);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title><?php echo SITE_NAME; ?></title>
+		<title><?php echo SITE_NAME . ' | ' . basename($_SERVER['PHP_SELF'], ".php"); ?></title>
 		
 		<link href="../css/bootstrap.css" rel="stylesheet">
 	</head>
