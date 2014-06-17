@@ -1,22 +1,11 @@
-<!-- Add new games. 
-
-New Game Form: 
-
-- Jar name
-- Path to main class
-- Width
-- Height
-- Upload (Negate need for jar name?)
-- Creator(s) Name (Have ability for more than one collaborator.
-Have a way for people to update own games? Or just have admin control.
--->
-
 <?php 
 
 require_once($_SERVER['DOCUMENT_ROOT'] . "/resources/config.php");
 require_once(TEMPLATES_PATH . "/header.php"); 
 
 ?>
+
+<?php if (!isset($_SESSION['login'])) { ?>
 
 <h2>Please enter the admin information.</h2>
 
@@ -41,3 +30,11 @@ require_once(TEMPLATES_PATH . "/header.php");
 	</form>
 
 </div>
+
+<?php } else { ?>
+
+<p class="lead">You are logged in.</p>
+
+<a href="add">Add Game</a>
+
+<?php } ?>
