@@ -7,5 +7,9 @@ New Game Form:
 - Width
 - Height
 - Upload (Negate need for jar name?)
+- Creator(s) Name (Have ability for more than one collaborator.
+
+
+Have a way for people to update own games? Or just have admin control.
 
 -->

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<title><?php echo SITE_NAME; ?></title>
@@ -13,9 +14,9 @@
 						<a href="#" class="navbar-brand"><?php echo SITE_NAME; ?></a>
 					</div>
 					<div class="nav navbar-nav navbar-right">
-						<li><a href="index">Home</a></li>
-						<li><a href="about">About</a></li>
-						<li><a href="games">Games</a></li>
+						<li><a href="/index">Home</a></li>
+						<li><a href="/about">About</a></li>
+						<li><a href="/games">Games</a></li>
 					</div>
 				</div>
 			</nav>
