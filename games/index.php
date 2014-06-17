@@ -16,8 +16,10 @@ require_once(TEMPLATES_PATH . "/header.php");
 	<form class="form" id="chooseGame" method="post" action="play">
 		<select class="form-control selectpicker" name="gameId">
 			<option value="1">Ruby Drop</option>
-		</select>	
-		<button type="submit" name="submit_form" value="Submit" id="submit_form" class="btn btn-block btn-default btn-lg btn-primary">Register</button>
+		</select>
+
+		<br>	
+		<button type="submit" name="submit_form" value="Submit" id="submit_form" class="btn btn-block btn-default btn-lg btn-primary">Play</button>
 
 		<!-- <button class="btn btn-large" onclick="update()">Go</button> -->
 	</form>
