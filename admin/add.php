@@ -1,4 +1,4 @@
-<!-- Make sure logged in and all eventually -->
+ Make sure logged in and all eventually -->
 
 <?php 
 require_once($_SERVER['DOCUMENT_ROOT'] . "/resources/config.php");
@@ -69,6 +69,13 @@ require_once(TEMPLATES_PATH . "/header.php");
 
 </script>
 
+<!--Ideas:
+
+-Contact field? Contact creator with comments/questions/suggestions. Optional.
+
+ -->
+
+
 <!-- Add new games. 
 
 New Game Form: 
@@ -80,3 +87,5 @@ New Game Form:
 - Upload (Negate need for jar name?)
 - Creator(s) Name (Have ability for more than one collaborator.
 Have a way for people to update own games? Or just have admin control.
+
+-->

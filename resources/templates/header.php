@@ -10,7 +10,13 @@ session_regenerate_id(true);
 	<head>
 		<title><?php echo SITE_NAME . ' | ' . basename($_SERVER['PHP_SELF'], ".php"); ?></title>
 		
-		<link href="../css/bootstrap.css" rel="stylesheet">
+		<link href="/css/bootstrap.css" rel="stylesheet">
+		<script src="/js/bootstrap.js"></script>
+		<script src="/js/jquery-2.1.1.js"></script>
+		
+		<script src="/js/basic.js"></script>
+
+
 	</head>
 	<body>
 		<div class="container-fluid">
