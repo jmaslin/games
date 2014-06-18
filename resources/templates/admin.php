@@ -10,4 +10,4 @@
 			<li><a href="/admin/logout">Logout</a></li>
 		</div>
 	</div>
-</nav>
+</nav> 
