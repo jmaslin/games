@@ -17,16 +17,27 @@ require_once(TEMPLATES_PATH . "/header.php");
 		<select class="form-control selectpicker" name="gameId">
 			<?php 
 
+			$year = 0;
+
 			$db = new SQLite3(DATA_PATH . '/games.db');
-			$results = $db -> query("SELECT * FROM games");
+			$results = $db -> query("SELECT * FROM games ORDER BY year DESC");
 
 			while ($row = $results -> fetchArray()) {
+				if ($row['year'] != $year) {
+					$year = $row['year'];
+					printf('<option disabled value=""> <strong>' . $year . '</strong></option>');
+				}
 				printf('<option value = "' . $row['id'] . '">' . $row['name'] . '</option>' . "\n");
 			}
 
 			?>
 		</select>
 
+		<!-- Instead of this maybe have pages of games where users can upload an image (or use a stock one) and have a brief description.
+				Games would be clickable, use same loading principles. 
+			 Also, could display stats (most popular games, clicks, etc) 
+		-->
+		
 		<br>	
 		<button type="submit" name="submit_form" value="Submit" id="submit_form" class="btn btn-block btn-default btn-lg btn-primary">Play</button>
 
@@ -52,16 +63,6 @@ require_once(TEMPLATES_PATH . "/header.php");
 	}
 
 	function update() {
-
-		// Test vars
-		className = "com.justinmaslin.RubyDrop/RubyDrop.class";
-		archiveName = "http://games.justinmaslin.com/games/DropV0.3.jar";
-
-		$("obj").style.display = '';
-
-		$("class").value = className;
-		$("archive").value = archiveName;
-
 
 	}
 

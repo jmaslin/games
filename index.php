@@ -5,5 +5,8 @@ require_once(TEMPLATES_PATH . "/header.php");
 
 ?>
 
-<h2>Home</h2>
-<p class="lead">Welcome to the website.</p>
+<div class="row-fluid col-sm-4">
+	<h1>Home
+		<small>Welcome.</small>
+	</h1>
+</div>

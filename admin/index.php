@@ -16,6 +16,7 @@ if (sizeof($_POST == 3) && isset($_POST['user']) && isset($_POST['password'])) {
 	if ($_POST['user'] == $USERNAME && md5($_POST['password']) == $PASSWORD) {
 		echo "Login.";
 		$_SESSION['login'] = True;
+		header('Location: /admin/index');
 	}
 	else {
 		echo "Invalid login.";

@@ -30,6 +30,7 @@ session_regenerate_id(true);
 
 		</div>
 
+		<?php if (isset($_SESSION['login'])) { require_once(TEMPLATES_PATH . "/admin.php"); } ?>
+
 		<div style="padding-top: 70px;" class="container-fluid">
 
-	<?php if (isset($_SESSION['login'])) { require_once(TEMPLATES_PATH . "/admin.php"); } ?>
