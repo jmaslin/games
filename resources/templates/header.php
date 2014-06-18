@@ -13,7 +13,7 @@ session_regenerate_id(true);
 		<link href="/css/bootstrap.css" rel="stylesheet">
 		<script src="/js/bootstrap.js"></script>
 		<script src="/js/jquery-2.1.1.js"></script>
-		
+
 		<script src="/js/basic.js"></script>
 
 
@@ -21,7 +21,7 @@ session_regenerate_id(true);
 	<body>
 		<div class="container-fluid">
 
-			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<nav class="navbar navbar-default navbar-static-top" role="navigation">
 				<div class="container-fluid">
 					<div class="navbar-header">
 						<a href="#" class="navbar-brand"><?php echo SITE_NAME; ?></a>
@@ -38,5 +38,5 @@ session_regenerate_id(true);
 
 		<?php if (isset($_SESSION['login'])) { require_once(TEMPLATES_PATH . "/admin.php"); } ?>
 
-		<div style="padding-top: 70px;" class="container-fluid">
+		<div class="container-fluid">
 
