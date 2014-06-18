@@ -3,6 +3,11 @@
 session_start();
 session_regenerate_id(true);
 
+// Include php files useful for most pages
+foreach (glob($_SERVER['DOCUMENT_ROOT'] . "/resources/functions/*.php") as $filename) {    	
+	include $filename;
+}
+
 ?>
 
 <!DOCTYPE html>
