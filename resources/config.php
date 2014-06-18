@@ -8,4 +8,6 @@ defined("DATA_PATH")
 
 define('SITE_NAME', "Site Name");
 
+define("JAR_DIR", realpath(dirname(__FILE__) . '/jars'));
+
 ?>
