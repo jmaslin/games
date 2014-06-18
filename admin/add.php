@@ -5,6 +5,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/resources/config.php");
 require_once(TEMPLATES_PATH . "/header.php"); 
 ?>
 
+<?php if (isset($_SESSION['login']) && $_SESSION['login'] == 1) { ?>
+
 <h2>Add Game</h2>
 <p class="lead">Use this form to upload a new game.</p>
 
@@ -15,8 +17,8 @@ require_once(TEMPLATES_PATH . "/header.php");
 			<input type="text" class="form-control" name="name" placeholder="Game Name">
 		</div>
 		<div class="form-group">
-			<label>Game Creator</label>
-			<input type="text" class="form-control" name="creator" placeholder="Game Coder(s)">
+			<label>Game Creator(s)</label>
+			<input type="text" class="form-control" name="creator" placeholder="Example: Justin, Justin">
 		</div>
 		<div class="form-group">
 			<label>Year Created</label>
@@ -30,7 +32,7 @@ require_once(TEMPLATES_PATH . "/header.php");
 		<div class="form-group">
 			<label>Path To Main Class</label>
 			<p>Include packages in the path.</p>
-			<input type="text" class="form-control" name="classPath" placeholder="ClassName.class">
+			<input type="text" class="form-control" name="classPath" placeholder="Example: package.ClassName.class">
 		</div>
 
 		<!-- Eventually move to same row. -->
@@ -48,6 +50,12 @@ require_once(TEMPLATES_PATH . "/header.php");
 	</form>
 
 </div>
+
+<?php } else { ?>
+
+<p>You are not authorized to view this page!</p>
+
+<?php } ?>
 
 <!-- Do form validation before sending -->
 

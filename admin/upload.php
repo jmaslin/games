@@ -35,7 +35,7 @@ if (!empty($_FILES["jar"])) {
 		$move = move_uploaded_file($jar["tmp_name"], JAR_DIR . '/' . $jar["name"]);
 
 		if ($move) {
-			 echo "The file ". $jar['name']. " has been uploaded"; 
+			 echo "The file ". $jar['name']. " has been uploaded."; 
 		}
 		else {
 			echo "Problem uploading " . basename($jar['name']);
