@@ -5,13 +5,30 @@ require_once(TEMPLATES_PATH . "/header.php");
 
 ?>
 
-<?php if (!isset($_SESSION['login'])) { ?>
+<?php
+
+if (sizeof($_POST == 3) && isset($_POST['user']) && isset($_POST['password'])) {
+
+	if ($_POST['user'] == "" || $_POST['password'] == "") {
+		echo "<p>Please enter a username and a password.</p>";
+	}
+
+	if ($_POST['user'] == $USERNAME && md5($_POST['password']) == $PASSWORD) {
+		echo "Login.";
+		$_SESSION['login'] = True;
+	}
+	else {
+		echo "Invalid login.";
+	}
+}
+
+if (!isset($_SESSION['login'])) { ?>
 
 <h2>Please enter the admin information.</h2>
 
 <div class="row-fluid col-sm-4">
 
-	<form role="form" method="post" action="/admin/login">
+	<form role="form" method="post" action="/admin/index">
 
 		<div class="form-group">
 			<label>User</label>
@@ -31,10 +48,14 @@ require_once(TEMPLATES_PATH . "/header.php");
 
 </div>
 
-<?php } else { ?>
+<?php } else if (isset($_SESSION['login'])) { ?>
 
 <p class="lead">You are logged in.</p>
 
+<a href="/admin/logout">Logout</a>
 <a href="add">Add Game</a>
 
-<?php } ?>
+<?php } else  {
+
+echo "process data";
+	} ?>
