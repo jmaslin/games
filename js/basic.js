@@ -3,4 +3,4 @@ function $(input) {
 
 	output = document.getElementById(input);
 	return output;
-}
+} 
