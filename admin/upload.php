@@ -11,7 +11,7 @@ function test_input($data) {
 	return $data;
 }
 
-// Test input and save into local vars
+
 $gameName = test_input($_POST['name']);
 $gameCreator = test_input($_POST['creator']);
 $gameYear = test_input($_POST['year']);
@@ -20,7 +20,7 @@ $gameYear = test_input($_POST['year']);
 if (!empty($_FILES["jar"])) {
 
 	// Verify we are uploading a jar
-	if ($_FILES["jar"]["type"] == "application/x-java-archive") {
+	if ($_FILES["jar"]["type"] == "application/java-archive") {
 
 		$jar = $_FILES["jar"];
 
@@ -61,6 +61,10 @@ $mainPath = test_input($_POST['classPath']);
 $gameHeight = test_input($_POST['height']);
 $gameWidth = test_input($_POST['width']);
 
+$db = new SQLite3(DATA_PATH . '/games.db');
+
+$db -> exec("INSERT INTO games (name, creator, year, classLocation, jarLocation, height, width)
+				VALUES ('$gameName', '$gameCreator', '$gameYear', '$mainPath', '$jarName', '$gameHeight', '$gameWidth')");
 
 
 

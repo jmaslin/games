@@ -11,6 +11,9 @@ $results = $db -> query("SELECT * FROM games WHERE id = " . $gameId);
 
 $gameData = $results -> fetchArray();
 
+// Add on path to jar folder
+$gameData['jarLocation'] = JAR_DIR . '/' . $gameData['jarLocation'];
+
 ?>
 
 <h2><?php echo $gameData['name']; ?></h2>

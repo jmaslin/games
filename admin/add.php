@@ -49,6 +49,18 @@ require_once(TEMPLATES_PATH . "/header.php");
 
 </div>
 
+<!-- Do form validation before sending -->
+
+<script type="text/javascript">
+	
+	// Make sure nothing blank, proper format, etc.
+	function onSubmit() {
+
+
+	}
+
+</script>
+
 <!-- Add new games. 
 
 New Game Form: 
