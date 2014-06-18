@@ -24,7 +24,31 @@ require_once(TEMPLATES_PATH . "/header.php");
 
 <?php if (isset($_SESSION['login'])) { ?>
 
-	<button class="btn btn-lg btn-warning" onclick="editAbout()">Edit Section</button>
+	<div class="row-fluid">
+		<div class="col-sm-6">
+			<button class="btn btn-lg btn-warning" id="editAboutBtn" onclick="editAbout()">Edit Section</button>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+
+		<div class="col-sm-8">
+			<form id="editAboutForm" style="display: none;" role="form">
+
+				<div class="form-group">
+					<label>New Text</label>
+					<textarea class="form-control" id="newAbout" rows="3" placeholder=""></textarea>
+				</div>
+
+				<div class="form-group">
+					<button class="btn btn-lg btn-success" onclick="save()">Save</button>
+					<button class="btn btn-lg btn-warning" onclick="cancel()">Cancel</button>
+				</div>
+
+			</form>
+		</div>
+
+	</div>
 
 <?php } ?>
 
@@ -32,9 +56,16 @@ require_once(TEMPLATES_PATH . "/header.php");
 
 	function editAbout() {
 
-		$("aboutText").innerHTML = "";
-		$("aboutText").style.display = 'none';
-		alert("test");
+		$("editAboutBtn").style.display = 'none';
+		$("editAboutForm").style.display = '';
+		$("newAbout").placeholder = "<?php echo $ABOUT_TEXT; ?>";
+
+	}
+
+	function cancel() {
+
+		$("editAboutBtn").style.display = '';
+		$("editAboutForm").style.display = 'none';
 	}
 
 </script>
