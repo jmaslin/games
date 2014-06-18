@@ -9,7 +9,7 @@ require_once(TEMPLATES_PATH . "/header.php");
 <p class="lead">Use this form to upload a new game.</p>
 
 <div class="row-fluid col-sm-6">
-	<form role="form">
+	<form role="form" method="post" action="upload" enctype="multipart/form-data">
 		<div class="form-group">
 			<label>Game Name</label>
 			<input type="text" class="form-control" name="name" placeholder="Game Name">
@@ -17,6 +17,11 @@ require_once(TEMPLATES_PATH . "/header.php");
 		<div class="form-group">
 			<label>Game Creator</label>
 			<input type="text" class="form-control" name="creator" placeholder="Game Coder(s)">
+		</div>
+		<div class="form-group">
+			<label>Year Created</label>
+			<!-- Make this a dropdown eventually. -->
+			<input type="number" class="form-control" name="year" placeholder="Example: 2014">
 		</div>
 		<div class="form-group">
 			<label>Jar Upload</label>
@@ -37,7 +42,7 @@ require_once(TEMPLATES_PATH . "/header.php");
 		</div>
 
 		<div class="form-group">
-			<button class="btn btn-large btn-primary" name="submit">Submit</button>
+			<button class="btn btn-large btn-primary" name="submit">Upload</button>
 		</div>
 
 	</form>
