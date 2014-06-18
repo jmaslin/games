@@ -15,7 +15,7 @@ session_regenerate_id(true);
 	<body>
 		<div class="container-fluid">
 
-			<nav class="navbar navbar-default navbar-static-top" role="navigation">
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 				<div class="container-fluid">
 					<div class="navbar-header">
 						<a href="#" class="navbar-brand"><?php echo SITE_NAME; ?></a>
@@ -27,3 +27,9 @@ session_regenerate_id(true);
 					</div>
 				</div>
 			</nav>
+
+		</div>
+
+		<div style="padding-top: 70px;" class="container-fluid">
+
+	<?php if (isset($_SESSION['login'])) { require_once(TEMPLATES_PATH . "/admin.php"); } ?>

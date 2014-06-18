@@ -50,10 +50,9 @@ if (!isset($_SESSION['login'])) { ?>
 
 <?php } else if (isset($_SESSION['login'])) { ?>
 
-<p class="lead">You are logged in.</p>
+<p class="lead">You are logged in!</p>
 
-<a href="/admin/logout">Logout</a>
-<a href="add">Add Game</a>
+<p>What would you like to do?</p>
 
 <?php } else  {
 
