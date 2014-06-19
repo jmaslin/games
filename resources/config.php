@@ -18,6 +18,7 @@ $GLOBALS['PASSWORD'] = "1a1dc91c907325c69271ddf0c944bc72";
 // About Page
 
 $GLOBALS['ABOUT_TITLE'] = "About This Site";
-$GLOBALS['ABOUT_TEXT'] = "This site features games written in Java.";
+// $GLOBALS['ABOUT_TEXT'] = "This site features games written in Java.";
+
 
 ?>

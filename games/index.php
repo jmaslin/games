@@ -55,12 +55,7 @@ require_once(TEMPLATES_PATH . "/header.php");
 
 <script type="text/javascript">
 
-	// Shorthand for getting elements
-	function $(input) {
 
-		output = document.getElementById(input);
-		return output;
-	}
 
 	function update() {
 
