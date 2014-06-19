@@ -12,18 +12,25 @@ $results = $db -> query("SELECT * FROM games WHERE id = " . $gameId);
 $gameData = $results -> fetchArray();
 
 // Add on path to jar folder
-$gameData['jarLocation'] = JAR_DIR . '/' . $gameData['jarLocation'];
+//$gameData['jarLocation'] = JAR_DIR . '/' . $gameData['jarLocation'];
+$gameData['jarLocation'] = '/resources/jars/' . $gameData['jarLocation'];
 
 ?>
 
-<h2><?php echo $gameData['name']; ?></h2>
-<h3>By <?php echo $gameData['creator']; ?></h3>
+<div class="row">
+	<div class="col-sm-4 col-sm-offset-4">
 
-<a href="/games">Go Back</a>
-<br>
+		<h2><?php echo $gameData['name']; ?></h2>
+		<h3>By <?php echo $gameData['creator']; ?></h3>
+		<a href="/games">Go Back</a>
+		<hr>
+	</div>
+</div>
 
-<object id="obj" style="display; none;" type="application/x-java-applet" width="<?php echo $gameData['width']; ?>" height="<?php echo $gameData['height']; ?>">
+<div class="row text-center">
+<object id="obj" style="display; none;" type="application/x-java-applet" width="<?php echo $gameData['width']; ?>" height="<?php echo $gameData['height']; ?>" border="1">
 	<param id="class" name="code" value="<?php echo $gameData['classLocation']; ?>"/>
 	<param id="archive" name="archive" value="<?php echo $gameData['jarLocation']; ?>"/>
 	Applet failed!
 </object>
+</div>

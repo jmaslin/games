@@ -5,44 +5,48 @@ require_once(TEMPLATES_PATH . "/header.php");
 
 ?>
 
-<div class="row-fluid">
-	<h2>Games</h2>	
-	<p class="lead">Please choose a game.</p>
+<div class="row">
+	<div class="col-sm-4 col-sm-offset-4">
+		<h2>Games</h2>	
+		<p class="lead">Please choose a game.</p>
+		<hr>
+	</div>
 </div>
 
-<hr>
 
-<div class="row-fluid col-sm-4">
-	<form class="form" id="chooseGame" method="post" action="play">
-		<select class="form-control selectpicker" name="gameId">
-			<?php 
+<div class="row">
+	<div class="col-sm-4 col-sm-offset-4 col-lg-2 col-lg-offset-5">
+		<form class="form" id="chooseGame" method="post" action="play">
+			<select class="form-control selectpicker" name="gameId">
+				<?php 
 
-			$year = 0;
+				$year = 0;
 
-			$db = new SQLite3(DATA_PATH . '/games.db');
-			$results = $db -> query("SELECT * FROM games ORDER BY year DESC");
+				$db = new SQLite3(DATA_PATH . '/games.db');
+				$results = $db -> query("SELECT * FROM games ORDER BY year DESC");
 
-			while ($row = $results -> fetchArray()) {
-				if ($row['year'] != $year) {
-					$year = $row['year'];
-					printf('<option disabled value=""> <strong>' . $year . '</strong></option>');
+				while ($row = $results -> fetchArray()) {
+					if ($row['year'] != $year) {
+						$year = $row['year'];
+						printf('<option disabled value=""> <strong>' . $year . '</strong></option>');
+					}
+					printf('<option value = "' . $row['id'] . '">' . $row['name'] . '</option>' . "\n");
 				}
-				printf('<option value = "' . $row['id'] . '">' . $row['name'] . '</option>' . "\n");
-			}
 
-			?>
-		</select>
+				?>
+			</select>
 
-		<!-- Instead of this maybe have pages of games where users can upload an image (or use a stock one) and have a brief description.
-				Games would be clickable, use same loading principles. 
-			 Also, could display stats (most popular games, clicks, etc) 
-		-->
-		
-		<br>	
-		<button type="submit" name="submit_form" value="Submit" id="submit_form" class="btn btn-block btn-default btn-lg btn-primary">Play</button>
+			<!-- Instead of this maybe have pages of games where users can upload an image (or use a stock one) and have a brief description.
+					Games would be clickable, use same loading principles. 
+				 Also, could display stats (most popular games, clicks, etc) 
+			-->
+			
+			<br>	
+			<button type="submit" name="submit_form" value="Submit" id="submit_form" class="btn btn-block btn-default btn-lg btn-primary">Play</button>
 
-		<!-- <button class="btn btn-large" onclick="update()">Go</button> -->
-	</form>
+			<!-- <button class="btn btn-large" onclick="update()">Go</button> -->
+		</form>
+	</div>
 </div>
 
 <!-- <object id="obj" style="display; none;" type="application/x-java-applet" width="501" height="801">
@@ -52,6 +56,7 @@ require_once(TEMPLATES_PATH . "/header.php");
 </object>
  -->
 
+<?php include_once(TEMPLATES_PATH . '/footer.php'); ?>
 
 <script type="text/javascript">
 
