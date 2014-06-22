@@ -41,7 +41,5 @@ foreach (glob($_SERVER['DOCUMENT_ROOT'] . "/resources/functions/*.php") as $file
 
 		<!-- </div> -->
 
-		<?php if (isset($_SESSION['login'])) { require_once(TEMPLATES_PATH . "/admin.php"); } ?>
-
 		<div class="container-fluid">
 
