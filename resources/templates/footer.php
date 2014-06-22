@@ -4,7 +4,7 @@
 	<hr>
 		<div class="row text-center">
 			<footer>
-				<small>Footer</small>
+				<small><?php echo FOOTER_TEXT; ?></small>
 			</footer>
 		</div>
 	</div>

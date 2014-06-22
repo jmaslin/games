@@ -1,10 +1,10 @@
-<?php 
+<?php
 
 session_start();
 session_regenerate_id(true);
 
 // Include php files useful for most pages
-foreach (glob($_SERVER['DOCUMENT_ROOT'] . "/resources/functions/*.php") as $filename) {    	
+foreach (glob($_SERVER['DOCUMENT_ROOT'] . "/resources/functions/*.php") as $filename) {
 	include $filename;
 }
 
@@ -24,7 +24,7 @@ foreach (glob($_SERVER['DOCUMENT_ROOT'] . "/resources/functions/*.php") as $file
 
 	</head>
 	<body>
-		<div class="container-fluid">
+		<!-- <div class="container-fluid"> -->
 
 			<nav class="navbar navbar-default navbar-static-top" role="navigation">
 				<div class="container-fluid">
@@ -39,7 +39,7 @@ foreach (glob($_SERVER['DOCUMENT_ROOT'] . "/resources/functions/*.php") as $file
 				</div>
 			</nav>
 
-		</div>
+		<!-- </div> -->
 
 		<?php if (isset($_SESSION['login'])) { require_once(TEMPLATES_PATH . "/admin.php"); } ?>
 

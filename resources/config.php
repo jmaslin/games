@@ -10,6 +10,7 @@ define('SITE_NAME', "Games");
 
 define("JAR_DIR", realpath(dirname(__FILE__) . '/jars'));
 
+define("FOOTER_TEXT", "This is a footer.");
 
 // Basic user account, needs to be made more secure.
 $GLOBALS['USERNAME'] = "user";
