@@ -6,7 +6,7 @@ require_once(TEMPLATES_PATH . "/header.php");
 <?php if (isset($_SESSION['login']) && $_SESSION['login'] == 1) { ?>
 
 <div class="row">
-  <div class="col-sm-6 col-sm-offset-3 text-center">
+  <div class="<?php echo TITLE_CLASS; ?>">
     <h2>Add Game</h2>
     <p class="lead">Use this form to upload a new game.</p>
     <hr>

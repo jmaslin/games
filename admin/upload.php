@@ -1,7 +1,7 @@
 <?php
 
 require_once($_SERVER['DOCUMENT_ROOT'] . "/resources/config.php");
-require_once(TEMPLATES_PATH . "/header.php"); 
+require_once(TEMPLATES_PATH . "/header.php");
 
 $gameName = test_input($_POST['name']);
 $gameCreator = test_input($_POST['creator']);
@@ -10,8 +10,8 @@ $gameYear = test_input($_POST['year']);
 // Make sure there is actually a file
 if (!empty($_FILES["jar"])) {
 
-	// Verify we are uploading a jar
-	if ($_FILES["jar"]["type"] == "application/java-archive") {
+// Verify we are uploading a jar
+//  if ($_FILES["jar"]["type"] == "application/java-archive") {
 
 		$jar = $_FILES["jar"];
 
@@ -26,11 +26,12 @@ if (!empty($_FILES["jar"])) {
 		$move = move_uploaded_file($jar["tmp_name"], JAR_DIR . '/' . $jar["name"]);
 
 		if ($move) {
-			 echo "The file ". $jar['name']. " has been uploaded."; 
+			 echo "The file ". $jar['name']. " has been uploaded.";
 		}
 		else {
-			echo "Problem uploading " . basename($jar['name']);
+			echo "Problem uploading " . basename($jar["name"]);
 		}
+		
 		// if (!$move) {
 		// 	echo "<p>Error on move.</p>";
 		// 	exit;
@@ -38,12 +39,12 @@ if (!empty($_FILES["jar"])) {
 
 		// Set proper perms
 		// chmod(JAR_DIR . $name, 0644);
-	}
+//  }
 
-	else {
-		echo "<p>Invalid file type.</p>";
-		exit;
-	}
+// 	else {
+// 		echo "<p>Invalid file type.</p>";
+// 		exit;
+// 	}
 
 }
 
@@ -56,8 +57,5 @@ $db = new SQLite3(DATA_PATH . '/games.db');
 
 $db -> exec("INSERT INTO games (name, creator, year, classLocation, jarLocation, height, width)
 				VALUES ('$gameName', '$gameCreator', '$gameYear', '$mainPath', '$jarName', '$gameHeight', '$gameWidth')");
-
-
-
 
 ?>

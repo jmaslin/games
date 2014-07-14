@@ -12,6 +12,8 @@ define("JAR_DIR", realpath(dirname(__FILE__) . '/jars'));
 
 define("FOOTER_TEXT", "This is a footer.");
 
+define("TITLE_CLASS", "col-sm-6 col-sm-offset-3 text-center");
+
 // Basic user account, needs to be made more secure.
 $GLOBALS['USERNAME'] = "user";
 $GLOBALS['PASSWORD'] = "1a1dc91c907325c69271ddf0c944bc72";
